@@ -24,3 +24,15 @@ def add_task(description, due_date=None, priority=None):
     }
     tasks.append(task)
     print(f"Task added: {description}")
+
+def load_task():
+    if os.path.exist(TASKS_FILE):
+        with open(TASKS_FILE,'r') as file:
+            return json.load(file)
+        return[]
+
+def save_task(tasks):
+    with open(TASKS_FILE .'w') as file:
+              jason.dump(task, file, indent=4)
+              
+              
